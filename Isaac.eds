@@ -1,15 +1,14 @@
-$ EZ-EDS Version 3.21.1.20161208 Generated Electronic Data Sheet
+$ EZ-EDS Version 3.25.1.20181218 Generated Electronic Data Sheet
 
-$ Zaxis Isaac ver 4.3
+$ Zaxis Variable Metered Pump (VMP) Version 1.0
 
 [File]
         DescText = "EDS file for Isaac";
         CreateDate = 10-03-2019;
         CreateTime = 12:07:24;
-        ModDate = 04-13-2020;
-    $ Added ZSpan feature.
-        ModTime = 08:27:57;
-        Revision = 3.0;
+        ModDate = 07-23-2020;
+        ModTime = 09:35:13;
+        Revision = 1.52;
         HomeURL = "zaxisinc.com";
         1_IOC_Details_License = 0x32FD64E2;
 
@@ -133,6 +132,19 @@ $ Zaxis Isaac ver 4.3
                 7,"SpareState",
                 8,"ProgNumb",
                 9,"TestValve";
+        Param7 =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                0x0000,                 $ Descriptor
+                0xC3,                   $ Data Type
+                2,                      $ Data Size in bytes
+                "CosBitMask",           $ name
+                "",                     $ units
+                "Change-of-state bit mask",    $ help string
+                ,,0,                    $ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
         Param8 =
                 0,                      $ reserved, shall equal 0
                 ,,                      $ Link Path Size, Link Path
@@ -431,8 +443,7 @@ $ Zaxis Isaac ver 4.3
                 13,"Chan2Disable",
                 14,"Chan3Disable",
                 15,"Chan4Disable",
-                16,"ZSpanNullGet",
-                17,"ZSpanSpanGet";
+                16,"SpareBit16";
 
         Param3020 =
                 0,                      $ reserved, shall equal 0
@@ -440,7 +451,7 @@ $ Zaxis Isaac ver 4.3
                 0x0000,                 $ Descriptor
                 0xD3,                   $ Data Type
                 4,                      $ Data Size in bytes
-                "Status",               $ name
+                "CurrentStatus",        $ name
                 "",                     $ units
                 "Current status of Pump",    $ help string
                 ,,0,                    $ min, max, default data values
@@ -463,7 +474,7 @@ $ Zaxis Isaac ver 4.3
                 12,"Interlock",
                 13,"Abort",
                 14,"SpareBit14",
-                15,"ZSpanError";
+                15,"Fault";
         Param3040 =
                 0,                      $ reserved, shall equal 0
                 ,,                      $ Link Path Size, Link Path
@@ -750,7 +761,7 @@ $ Zaxis Isaac ver 4.3
                 8,Param110,
                 8,Param111,
                 8,Param80,
-                16,Param6,
+                16,Param7,
                 8,Param82,
                 8,Param83;
         Assem200 =
@@ -776,7 +787,6 @@ $ Zaxis Isaac ver 4.3
                 16,Param3,
                 16,Param4,
                 32,Param3020,
-                32,Param201,
                 8,Param80,
                 8,Param3040,
                 8,Param8,
